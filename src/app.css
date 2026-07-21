@@ -1,0 +1,127 @@
+/* Design tokens — teal accent on warm paper / deep slate */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --ink: #1c2421;
+  --ink-muted: #5a6b64;
+  --paper: #f3efe6;
+  --paper-elevated: #faf7f0;
+  --line: #d4cdc0;
+  --accent: #1f6f5b;
+  --accent-soft: #d7ebe3;
+  --accent-ink: #0f3d32;
+  --danger: #9b3b32;
+  --danger-soft: #f3d9d5;
+  --col-backlog: #3d6b8a;
+  --col-progress: #c46b3a;
+  --col-complete: #2f7a4a;
+  --col-onHold: #6b6570;
+  --priority-low: #5a6b64;
+  --priority-medium: #b07d2a;
+  --priority-high: #9b3b32;
+  --shadow: 0 10px 30px rgb(28 36 33 / 8%);
+  --radius: 12px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --transition: 180ms ease;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #e8efeB;
+  --ink-muted: #9aaca3;
+  --paper: #141a18;
+  --paper-elevated: #1c2421;
+  --line: #2e3a35;
+  --accent: #5fbfa4;
+  --accent-soft: #1e3d34;
+  --accent-ink: #d7ebe3;
+  --danger: #e08a80;
+  --danger-soft: #3a2421;
+  --col-backlog: #7eb3d4;
+  --col-progress: #e09a6a;
+  --col-complete: #6fbf8a;
+  --col-onHold: #a8a2ad;
+  --priority-low: #9aaca3;
+  --priority-medium: #d4a85a;
+  --priority-high: #e08a80;
+  --shadow: 0 12px 36px rgb(0 0 0 / 35%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.45;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgb(31 111 91 / 12%), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgb(196 107 58 / 10%), transparent 50%),
+    var(--paper);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes column-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-lift {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
