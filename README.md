@@ -57,3 +57,4 @@ Board state is stored under the `kanban-board-v1` key in `localStorage`. Theme p
 ## License
 
 Use and adapt freely for personal or learning projects.
+
