@@ -37,6 +37,19 @@ This app does **not** need API keys, tokens, or credentials.
   `git config user.email "<id>+<username>@users.noreply.github.com"`
 - Do not paste secrets into sample tasks, README snippets, or screenshots
 
+## Deploy
+
+Live site: [https://pushchukdev.github.io/Drag-n-Drop-Task-Board-v2/](https://pushchukdev.github.io/Drag-n-Drop-Task-Board-v2/)
+
+Pushes to `master` build and publish via GitHub Actions (`.github/workflows/deploy.yml`).
+
+One-time setup in the repo:
+
+1. Go to **Settings → Pages**
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**
+
+The repository must be public (or on a GitHub plan that allows private Pages).
+
 ## Data
 
 Board state is stored under the `kanban-board-v1` key in `localStorage`. Theme preference uses `kanban-theme`.
